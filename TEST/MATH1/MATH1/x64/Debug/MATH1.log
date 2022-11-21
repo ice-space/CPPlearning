@@ -1,0 +1,19 @@
+﻿  单链表.cpp
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\单链表.cpp(253,2): error C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  双链表.cpp
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(62,13): error C2065: “next”: 未声明的标识符
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(69,1): error C2059: 语法错误:“while”
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(69,19): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(69,19): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(73,1): error C2059: 语法错误:“while”
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(73,19): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(73,19): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(77,1): error C2059: 语法错误:“while”
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(77,25): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\双链表.cpp(77,25): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+  循环列表.cpp
+  顺序表.cpp
+  正在生成代码...
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\顺序表.cpp(105): warning C4715: “LocateElem”: 不是所有的控件路径都返回值
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\循环列表.cpp(20): warning C4715: “InitDlinkList”: 不是所有的控件路径都返回值
+C:\Users\GYAdministrator\Desktop\TEST\MATH1\MATH1\循环列表.cpp(37): error C4716: “InsertNextDNode”: 必须返回一个值
