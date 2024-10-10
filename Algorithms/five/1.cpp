@@ -2,7 +2,7 @@
  * @Author: Yuan
  * @Date: 2024-09-23 21:04:22
  * @LastEditors: Yuan
- * @LastEditTime: 2024-09-24 17:30:37
+ * @LastEditTime: 2024-09-25 16:28:59
  * @Description: 
  * @版权声明: icespaceworking@163.com
  */
@@ -55,17 +55,14 @@ int backtrackKnapsack(const vector<Item> &items, int capacity, int i, int curren
     {
         return max_value;
     }
-
     // 不选当前物品
     int notTake = backtrackKnapsack(items, capacity, i + 1, current_weight, current_value, max_value);
-
     // 选当前物品
     int take = 0;
     if (current_weight + items[i].weight <= capacity)
     {
         take = backtrackKnapsack(items, capacity, i + 1, current_weight + items[i].weight, current_value + items[i].value, max(current_value + items[i].value, max_value));
     }
-
     return max(notTake, take);
 }
 
@@ -85,19 +82,16 @@ double bound(Node u, int capacity, const vector<Item> &items)
     double bound = u.value;
     int j = u.level + 1;
     int totalWeight = u.weight;
-
     while (j < items.size() && totalWeight + items[j].weight <= capacity)
     {
         totalWeight += items[j].weight;
         bound += items[j].value;
         j++;
     }
-
     if (j < items.size())
     {
         bound += (capacity - totalWeight) * ((double)items[j].value / items[j].weight);
     }
-
     return bound;
 }
 
@@ -116,12 +110,10 @@ int branchAndBoundKnapsack(vector<Item> &items, int capacity)
     {
         Node u = q.front();
         q.pop();
-
         if (u.level == -1 || u.weight <= capacity)
         {
             if (u.level == items.size() - 1)
                 continue;
-
             // 子节点选择当前物品
             Node v(u.level + 1, u.value + items[u.level + 1].value, u.weight + items[u.level + 1].weight, 0);
             if (v.weight <= capacity && v.value > maxValue)
@@ -133,7 +125,6 @@ int branchAndBoundKnapsack(vector<Item> &items, int capacity)
             {
                 q.push(v);
             }
-
             // 子节点不选择当前物品
             Node w(u.level + 1, u.value, u.weight, 0);
             w.bound = bound(w, capacity, items);
@@ -151,16 +142,11 @@ int main()
     // 初始化物品和背包容量
     vector<Item> items = {{30, 20}, {10, 10}, {15, 20}};
     int capacity = 25;
-
-    
     // 贪心算法
     cout << "Greedy Knapsack (fractional knapsack): " << greedyKnapsack(items, capacity) << endl;
-
     // 回溯法
     cout << "Backtrack Knapsack (01 knapsack): " << backtrackKnapsack(items, capacity, 0, 0, 0, 0) << endl;
-
     // 分支定界法
     cout << "Branch and Bound Knapsack (01 knapsack): " << branchAndBoundKnapsack(items, capacity) << endl;
-
     return 0;
 }
